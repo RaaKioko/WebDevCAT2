@@ -1,1 +1,13 @@
-/* Custom custom styles for BrewVibes Cafe */
+:root {
+  --primary-color: #d2691e;
+  --bg-color: #fdfbf7;
+  --text-color: #3e2723;
+  --card-bg: #ffffff;
+  --nav-bg: #fdfbf7;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Outfit', sans-serif;
+}
