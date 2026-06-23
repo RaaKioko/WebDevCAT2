@@ -11,3 +11,18 @@ body {
   color: var(--text-color);
   font-family: 'Outfit', sans-serif;
 }
+
+.navbar {
+  background-color: var(--nav-bg);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.nav-link {
+  color: var(--text-color) !important;
+  font-weight: 500;
+}
+
+.nav-link.active {
+  color: var(--primary-color) !important;
+  font-weight: bold;
+}
