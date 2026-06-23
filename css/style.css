@@ -6,10 +6,19 @@
   --nav-bg: #fdfbf7;
 }
 
+[data-theme="dark"] {
+  --primary-color: #ffb74d;
+  --bg-color: #2e1d16;
+  --text-color: #f5f5f5;
+  --card-bg: #3e2723;
+  --nav-bg: #2e1d16;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: 'Outfit', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar {
@@ -39,4 +48,10 @@ body {
   color: white;
   text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
   padding: 60px 20px;
+}
+
+.footer {
+  margin-top: 60px;
+  padding: 20px 0;
+  border-top: 1px solid var(--primary-color);
 }
