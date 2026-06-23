@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-3" href="index.html" style="color: var(--primary-color);">☕ BrewVibes</a>
+            <a class="navbar-brand fw-bold fs-3" href="index.html" style="color: var(--primary-color);">&#9749; BrewVibes</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,9 +23,23 @@
                     <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
+                <div class="d-flex align-items-center ms-3">
+                    <span class="me-2 small fw-bold">Dark</span>
+                    <div class="form-check form-switch mb-0">
+                        <input class="form-check-input" type="checkbox" id="theme-toggle">
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
+    <div class="container" style="margin-top:30px; min-height:75vh;">
+        <h2 class="text-center mb-4">About Us</h2>
+    </div>
+    <footer class="footer text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 BrewVibes Cafe &amp; Roastery. Crafted with passion.</p>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
