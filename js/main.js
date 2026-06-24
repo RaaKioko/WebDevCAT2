@@ -28,4 +28,20 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 3. Testimonials Carousel
+    const slides = document.querySelectorAll('.carousel-slide');
+    if (slides.length > 0) {
+        let current = 0;
+        document.querySelector('.next-btn').addEventListener('click', () => {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        });
+        document.querySelector('.prev-btn').addEventListener('click', () => {
+            slides[current].classList.remove('active');
+            current = (current - 1 + slides.length) % slides.length;
+            slides[current].classList.add('active');
+        });
+    }
 });

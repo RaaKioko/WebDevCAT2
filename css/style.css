@@ -86,6 +86,36 @@ body {
   border-color: var(--primary-color);
 }
 
+/* Testimonials Carousel */
+.carousel-container {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 50px 60px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+.carousel-slide { display: none; animation: fadeIn 0.4s ease; }
+.carousel-slide.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.prev-btn { left: 12px; }
+.next-btn { right: 12px; }
+
+/* Form validation */
+.is-invalid { border-color: #dc3545 !important; }
+.error-msg { color: #dc3545; font-size: 0.8em; display: none; margin-top: 4px; }
+.is-invalid + .error-msg { display: block; }
+
 .footer {
   margin-top: 60px;
   padding: 20px 0;
