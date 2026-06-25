@@ -44,4 +44,50 @@ document.addEventListener('DOMContentLoaded', () => {
             slides[current].classList.add('active');
         });
     }
+
+    // 4. Reservation Form Validation
+    const resForm = document.getElementById('reservation-form');
+    if (resForm) {
+        resForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let valid = true;
+            ['res-name', 'res-date', 'res-time', 'res-guests'].forEach(id => {
+                const el = document.getElementById(id);
+                if (!el.value.trim() || (id === 'res-guests' && (el.value < 1 || el.value > 20))) {
+                    el.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    el.classList.remove('is-invalid');
+                }
+            });
+            if (valid) {
+                alert('Reservation confirmed! We look forward to seeing you.');
+                resForm.reset();
+            }
+        });
+    }
+
+    // 5. Contact Form Validation
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let valid = true;
+            ['contact-name', 'contact-email', 'contact-message'].forEach(id => {
+                const el = document.getElementById(id);
+                const empty = !el.value.trim();
+                const badEmail = id === 'contact-email' && !el.value.includes('@');
+                if (empty || badEmail) {
+                    el.classList.add('is-invalid');
+                    valid = false;
+                } else {
+                    el.classList.remove('is-invalid');
+                }
+            });
+            if (valid) {
+                alert('Message sent! We will get back to you shortly.');
+                contactForm.reset();
+            }
+        });
+    }
 });
