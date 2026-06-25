@@ -33,7 +33,39 @@
         </div>
     </nav>
     <div class="container" style="margin-top:30px; min-height:75vh;">
-        <h2 class="text-center mb-4">Make a Reservation</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <div class="card p-5">
+                    <h2 class="text-center mb-4">Book a Table</h2>
+                    <form id="reservation-form" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Full Name</label>
+                            <input type="text" class="form-control" id="res-name" placeholder="Your name">
+                            <div class="error-msg">Please enter your name.</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Date</label>
+                                <input type="date" class="form-control" id="res-date">
+                                <div class="error-msg">Please select a date.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Time</label>
+                                <input type="time" class="form-control" id="res-time">
+                                <div class="error-msg">Please select a time.</div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Number of Guests</label>
+                            <input type="number" class="form-control" id="res-guests" min="1" max="20" placeholder="e.g. 2">
+                            <div class="error-msg">Please enter number of guests (1-20).</div>
+                        </div>
+                        <button type="submit" class="btn w-100 btn-lg text-white fw-bold"
+                            style="background-color:var(--primary-color);">Confirm Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <footer class="footer text-center">
         <div class="container">
