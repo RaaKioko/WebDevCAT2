@@ -8,15 +8,21 @@ BrewVibes is a modern, fully responsive specialty coffee shop website built with
 - Custom CSS (`css/style.css`)
 - Vanilla JavaScript (`js/main.js`)
 
-## Features so far
-- Responsive Bootstrap navbar across all pages
+## Features
+- Responsive navbar with dark/light mode toggle (localStorage persisted)
 - Hero banner on homepage
-- Dark / Light mode toggle (persisted via localStorage)
-- About page with cafe story and roasting image
+- Testimonials carousel with prev/next navigation
+- Filterable menu by category (Coffee, Pastries, Mains)
+- Reservation booking form with client-side validation
+- Contact form with client-side validation
+- Gallery page with responsive image grid
+- Events page with upcoming workshops and live nights
 
 ## Pages
-- `index.html` — Home
-- `menu.html` — Menu (in progress)
-- `reservations.html` — Reservations (in progress)
-- `about.html` — About Us
-- `contact.html` — Contact (in progress)
+- `index.html` — Home (hero + testimonials)
+- `menu.html` — Menu (filterable cards)
+- `reservations.html` — Reservations (booking form)
+- `about.html` — About Us (cafe story)
+- `gallery.html` — Gallery (image grid)
+- `events.html` — Events (upcoming events)
+- `contact.html` — Contact (location + form)
