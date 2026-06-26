@@ -25,4 +25,5 @@ BrewVibes is a modern, fully responsive specialty coffee shop website built with
 - `about.html` — About Us (cafe story)
 - `gallery.html` — Gallery (image grid)
 - `events.html` — Events (upcoming events)
+- `team.html` — Team (employee bios)
 - `contact.html` — Contact (location + form)
