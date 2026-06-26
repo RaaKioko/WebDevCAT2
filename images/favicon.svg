@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Circle Background -->
+  <circle cx="50" cy="50" r="48" fill="#fdfbf7" stroke="#d2691e" stroke-width="4"/>
+  <!-- Steaming Waves -->
+  <path d="M42 32 Q 45 22, 42 12 T 42 2" fill="none" stroke="#ffb74d" stroke-width="3" stroke-linecap="round"/>
+  <path d="M50 32 Q 53 22, 50 12 T 50 2" fill="none" stroke="#d2691e" stroke-width="3" stroke-linecap="round"/>
+  <path d="M58 32 Q 61 22, 58 12 T 58 2" fill="none" stroke="#ffb74d" stroke-width="3" stroke-linecap="round"/>
+  <!-- Cup Body -->
+  <path d="M30 42 C30 62, 35 72, 50 72 C65 72, 70 62, 70 42 Z" fill="#d2691e"/>
+  <!-- Cup Handle -->
+  <path d="M70 47 C78 47, 82 52, 82 57 C82 62, 78 67, 70 67" fill="none" stroke="#d2691e" stroke-width="5" stroke-linecap="round"/>
+  <!-- Saucer -->
+  <path d="M22 76 L78 76 C81 76, 81 80, 78 80 L22 80 C19 80, 19 76, 22 76 Z" fill="#3e2723"/>
+</svg>
