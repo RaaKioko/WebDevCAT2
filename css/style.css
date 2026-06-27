@@ -121,3 +121,9 @@ body {
   padding: 20px 0;
   border-top: 1px solid var(--primary-color);
 }
+
+/* Custom Text Selection */
+::selection {
+  background-color: var(--primary-color);
+  color: white;
+}
