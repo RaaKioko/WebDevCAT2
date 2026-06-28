@@ -208,3 +208,21 @@ html {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Dark mode form and text contrast fixes */
+[data-theme="dark"] .text-muted {
+  color: #bcaaa4 !important;
+}
+[data-theme="dark"] .form-control {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-color: var(--primary-color);
+}
+[data-theme="dark"] .form-control::placeholder {
+  color: #8d6e63;
+}
+[data-theme="dark"] .form-control:focus {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-shadow: 0 0 0 0.25rem rgba(255, 183, 77, 0.25);
+}
