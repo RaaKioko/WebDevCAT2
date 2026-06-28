@@ -1,49 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
     /**
      * 1. Dark / Light Mode Toggle
-     * Handles theme switching and persists preference to localStorage.
      */
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
         const saved = localStorage.getItem('brewTheme') || 'light';
         document.documentElement.setAttribute('data-theme', saved);
-        themeToggle.checked = saved === 'dark';
-        themeToggle.addEventListener('change', (e) => {
-            const theme = e.target.checked ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('brewTheme', theme);
-        
-    // 6. IntersectionObserver card fade-in
-    const cards = document.querySelectorAll('.card');
-    if ('IntersectionObserver' in window) {
-        cards.forEach(c => c.classList.add('fade-in-card'));
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
+        // Will be a button with textContent soon, handle both checkbox and button
+        if(themeToggle.type === 'checkbox') {
+            themeToggle.checked = saved === 'dark';
+            themeToggle.addEventListener('change', (e) => {
+                const theme = e.target.checked ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('brewTheme', theme);
             });
-        }, { threshold: 0.1 });
-        cards.forEach(c => observer.observe(c));
-    }
-
-    // 7. Scroll To Top Button
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    if (scrollBtn) {
-        window.addEventListener('scroll', () => {
-            scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-});
+        } else {
+            themeToggle.textContent = saved === 'dark' ? '🌙' : '☀️';
+            themeToggle.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme');
+                const next = current === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('brewTheme', next);
+                themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
+            });
+        }
     }
 
     /**
      * 2. Menu Category Filter
-     * Filters menu items based on data-category attributes.
      */
     const filterBtns = document.querySelectorAll('.filter-btn');
     const menuItems = document.querySelectorAll('.menu-item');
@@ -56,155 +40,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 menuItems.forEach(item => {
                     item.closest('.col-md-4').style.display =
                         (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
-                
-    // 6. IntersectionObserver card fade-in
-    const cards = document.querySelectorAll('.card');
-    if ('IntersectionObserver' in window) {
-        cards.forEach(c => c.classList.add('fade-in-card'));
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
+                });
             });
-        }, { threshold: 0.1 });
-        cards.forEach(c => observer.observe(c));
-    }
-
-    // 7. Scroll To Top Button
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    if (scrollBtn) {
-        window.addEventListener('scroll', () => {
-            scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
         });
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-});
-            
-    // 6. IntersectionObserver card fade-in
-    const cards = document.querySelectorAll('.card');
-    if ('IntersectionObserver' in window) {
-        cards.forEach(c => c.classList.add('fade-in-card'));
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        cards.forEach(c => observer.observe(c));
-    }
-
-    // 7. Scroll To Top Button
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    if (scrollBtn) {
-        window.addEventListener('scroll', () => {
-            scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-});
-        
-    // 6. IntersectionObserver card fade-in
-    const cards = document.querySelectorAll('.card');
-    if ('IntersectionObserver' in window) {
-        cards.forEach(c => c.classList.add('fade-in-card'));
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        cards.forEach(c => observer.observe(c));
-    }
-
-    // 7. Scroll To Top Button
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    if (scrollBtn) {
-        window.addEventListener('scroll', () => {
-            scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-});
     }
 
     // 3. Testimonials Carousel
     const slides = document.querySelectorAll('.carousel-slide');
     if (slides.length > 0) {
         let current = 0;
-        document.querySelector('.next-btn').addEventListener('click', () => {
-            slides[current].classList.remove('active');
-            current = (current + 1) % slides.length;
-            slides[current].classList.add('active');
-        
-    // 6. IntersectionObserver card fade-in
-    const cards = document.querySelectorAll('.card');
-    if ('IntersectionObserver' in window) {
-        cards.forEach(c => c.classList.add('fade-in-card'));
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
+        const nextBtn = document.querySelector('.next-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        if(nextBtn && prevBtn) {
+            nextBtn.addEventListener('click', () => {
+                slides[current].classList.remove('active');
+                current = (current + 1) % slides.length;
+                slides[current].classList.add('active');
             });
-        }, { threshold: 0.1 });
-        cards.forEach(c => observer.observe(c));
-    }
-
-    // 7. Scroll To Top Button
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    if (scrollBtn) {
-        window.addEventListener('scroll', () => {
-            scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-});
-        document.querySelector('.prev-btn').addEventListener('click', () => {
-            slides[current].classList.remove('active');
-            current = (current - 1 + slides.length) % slides.length;
-            slides[current].classList.add('active');
-        
-    // 6. IntersectionObserver card fade-in
-    const cards = document.querySelectorAll('.card');
-    if ('IntersectionObserver' in window) {
-        cards.forEach(c => c.classList.add('fade-in-card'));
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
+            prevBtn.addEventListener('click', () => {
+                slides[current].classList.remove('active');
+                current = (current - 1 + slides.length) % slides.length;
+                slides[current].classList.add('active');
             });
-        }, { threshold: 0.1 });
-        cards.forEach(c => observer.observe(c));
-    }
-
-    // 7. Scroll To Top Button
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    if (scrollBtn) {
-        window.addEventListener('scroll', () => {
-            scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-});
+        }
     }
 
     // 4. Reservation Form Validation
@@ -221,64 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     el.classList.remove('is-invalid');
                 }
-            
-    // 6. IntersectionObserver card fade-in
-    const cards = document.querySelectorAll('.card');
-    if ('IntersectionObserver' in window) {
-        cards.forEach(c => c.classList.add('fade-in-card'));
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
             });
-        }, { threshold: 0.1 });
-        cards.forEach(c => observer.observe(c));
-    }
-
-    // 7. Scroll To Top Button
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    if (scrollBtn) {
-        window.addEventListener('scroll', () => {
-            scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-});
             if (valid) {
                 alert('Reservation confirmed! We look forward to seeing you.');
                 resForm.reset();
             }
-        
-    // 6. IntersectionObserver card fade-in
-    const cards = document.querySelectorAll('.card');
-    if ('IntersectionObserver' in window) {
-        cards.forEach(c => c.classList.add('fade-in-card'));
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        cards.forEach(c => observer.observe(c));
-    }
-
-    // 7. Scroll To Top Button
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    if (scrollBtn) {
-        window.addEventListener('scroll', () => {
-            scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
         });
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-});
     }
 
     // 5. Contact Form Validation
@@ -297,64 +103,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     el.classList.remove('is-invalid');
                 }
-            
-    // 6. IntersectionObserver card fade-in
-    const cards = document.querySelectorAll('.card');
-    if ('IntersectionObserver' in window) {
-        cards.forEach(c => c.classList.add('fade-in-card'));
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
             });
-        }, { threshold: 0.1 });
-        cards.forEach(c => observer.observe(c));
-    }
-
-    // 7. Scroll To Top Button
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    if (scrollBtn) {
-        window.addEventListener('scroll', () => {
-            scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-});
             if (valid) {
                 alert('Message sent! We will get back to you shortly.');
                 contactForm.reset();
             }
-        
-    // 6. IntersectionObserver card fade-in
-    const cards = document.querySelectorAll('.card');
-    if ('IntersectionObserver' in window) {
-        cards.forEach(c => c.classList.add('fade-in-card'));
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        cards.forEach(c => observer.observe(c));
-    }
-
-    // 7. Scroll To Top Button
-    const scrollBtn = document.getElementById('scrollTopBtn');
-    if (scrollBtn) {
-        window.addEventListener('scroll', () => {
-            scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
         });
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-});
     }
 
     // 6. IntersectionObserver card fade-in
