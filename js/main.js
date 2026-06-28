@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Dark / Light Mode Toggle
+    /**
+     * 1. Dark / Light Mode Toggle
+     * Handles theme switching and persists preference to localStorage.
+     */
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
         const saved = localStorage.getItem('brewTheme') || 'light';
@@ -12,7 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Menu Category Filter
+    /**
+     * 2. Menu Category Filter
+     * Filters menu items based on data-category attributes.
+     */
     const filterBtns = document.querySelectorAll('.filter-btn');
     const menuItems = document.querySelectorAll('.menu-item');
     if (filterBtns.length > 0) {
