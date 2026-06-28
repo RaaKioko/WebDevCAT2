@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('brewTheme', theme);
             });
         } else {
-            themeToggle.textContent = saved === 'dark' ? '🌙' : '☀️';
+            themeToggle.textContent = saved === 'dark' ? '☀️' : '🌙';
             themeToggle.addEventListener('click', () => {
                 const current = document.documentElement.getAttribute('data-theme');
                 const next = current === 'light' ? 'dark' : 'light';
                 document.documentElement.setAttribute('data-theme', next);
                 localStorage.setItem('brewTheme', next);
-                themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
+                themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
             });
         }
     }
